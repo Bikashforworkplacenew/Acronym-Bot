@@ -1,5 +1,5 @@
 {
-  "name": "wp-sample-hello",
+  "name": "Acronym-Bot",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
@@ -9,16 +9,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/panreel/wp-sample-hello.git"
+    "url": "git+https://github.com/Bikashforworkplacenew/Acronym-Bot.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/panreel/wp-sample-hello/issues"
+    "url": "https://github.com/Bikashforworkplacenew/Acronym-Bot/issues"
   },
-  "homepage": "https://github.com/panreel/wp-sample-hello#readme",
+  "homepage": "https://github.com/Bikashforworkplacenew/Acronym-Bot#readme",
   "dependencies": {
     "express": "^4.16.3",
+    "google-spreadsheet": "^2.0.3",
     "request": "^2.87.0"
   }
 }
