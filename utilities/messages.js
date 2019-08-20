@@ -2,8 +2,6 @@ var GoogleSpreadsheet = require('google-spreadsheet');
 var creds = require('./client_secret.json')
 var doc = new GoogleSpreadsheet('1D7CvKvJ0o6Wy8ZxZx3Oj4RfwqUaVBs-ueWC6xWZ9-_8');
 var newquerydoc= new GoogleSpreadsheet('1tHDGG321U79-kzzE1OMQ17fi-OXcbJdnxv5FzVEztfU');
-
-
 var acronym="";
 var meaning="";
 var know_more="";
@@ -71,7 +69,7 @@ module.exports = function(graph_api){
             else {
                 this._sendMessage(senderID, "Sorry I did not find that one , But dont worry I have sent it to the admin for review. It will be updated soon. ");
 
-                newquerydoc.addRow(1, { acronym: incoming_message }, function(err) {
+                newquerydoc.addRow(1, { acronym: 'new Entry' }, function(err) {
                     if(err) {
                         console.log(err);
                     }
