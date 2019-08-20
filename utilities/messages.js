@@ -2,7 +2,7 @@ var GoogleSpreadsheet = require('google-spreadsheet');
 var creds = require('./client_secret.json')
 var doc = new GoogleSpreadsheet('1D7CvKvJ0o6Wy8ZxZx3Oj4RfwqUaVBs-ueWC6xWZ9-_8');
 var newquerydoc= new GoogleSpreadsheet('1tHDGG321U79-kzzE1OMQ17fi-OXcbJdnxv5FzVEztfU');
-var tag="";
+var acronym="";
 var meaning="";
 var know_more="";
 var related_links="";
@@ -38,7 +38,7 @@ module.exports = function(graph_api){
             doc.getRows(1, function (err, rows) {
                 console.log("console message")
                 rows.forEach(function (rowValue) {
-                    eachRow.set(rowValue.tag, rowValue.index)
+                    eachRow.set(rowValue.acronym, rowValue.index)
                     rowsval=rows;
                 })
             });
@@ -56,7 +56,7 @@ module.exports = function(graph_api){
             if (eachRow.has(incoming_message)) {
                 console.log('item present in index ' + eachRow.get(incoming_message))
                 index = eachRow.get(incoming_message) - 1;
-                tag = rowsval[index].tag;
+                acronym = rowsval[index].acronym;
                 meaning = rowsval[index].meaning;
                 know_more = rowsval[index].def;
                 related_links = rowsval[index].more;
@@ -67,7 +67,7 @@ module.exports = function(graph_api){
             else {
                 this._sendMessage(senderID, "Sorry I did not find that one , But dont worry I have sent it to the admin for review. It will be updated soon. ");
 
-                doc.addRow(1, { tag:incoming_message  }, function(err) {
+                doc.addRow(1, { acronym:incoming_message  }, function(err) {
                     if(err) {
                         console.log(err);
                     }
