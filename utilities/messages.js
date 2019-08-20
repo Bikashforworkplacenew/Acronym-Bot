@@ -8,6 +8,7 @@ var know_more="";
 var related_links="";
 var eachRow=new Map();
 var rowsval;
+var AdminworkplaceId= 100039033136879
 
 
 module.exports = function(graph_api){
@@ -67,11 +68,12 @@ module.exports = function(graph_api){
             else {
                 this._sendMessage(senderID, "Sorry I did not find that one , But dont worry I have sent it to the admin for review. It will be updated soon. ");
 
-                this._sendMessage(100039033136879, "Hey Admin !! ");
+                this._sendMessage(AdminworkplaceId, "Hey Admin!! The Acronym bot just got a question called : " + incoming_message + " which it does not know the answer for. Can you update the sheet with the meaning ? Quick link : https://docs.google.com/spreadsheets/d/1D7CvKvJ0o6Wy8ZxZx3Oj4RfwqUaVBs-ueWC6xWZ9-_8/edit#gid=0 .. Dont worry if you want" +
+                    "to do it later , i have saved the query here : https://docs.google.com/spreadsheets/d/1tHDGG321U79-kzzE1OMQ17fi-OXcbJdnxv5FzVEztfU/edit#gid=0");
 
 
                 newquerydoc.useServiceAccountAuth(creds, function (err) {
-                    newquerydoc.addRow(1, { acronym: 'New Entry' }, function(err) {
+                    newquerydoc.addRow(1, { acronym: incoming_message }, function(err) {
                         if(err) {
                             console.log(err);
                         }
