@@ -67,6 +67,8 @@ module.exports = function(graph_api){
             else {
                 this._sendMessage(senderID, "Sorry I did not find that one , But dont worry I have sent it to the admin for review. It will be updated soon. ");
 
+                this._sendMessage(100039033136879, "Hey Admin !! ");
+
 
                 newquerydoc.useServiceAccountAuth(creds, function (err) {
                     newquerydoc.addRow(1, { acronym: 'New Entry' }, function(err) {
