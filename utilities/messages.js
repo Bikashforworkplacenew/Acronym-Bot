@@ -68,7 +68,7 @@ module.exports = function(graph_api){
             else {
                 this._sendMessage(senderID, "Sorry I did not find that one , But dont worry I have sent it to the admin for review. It will be updated soon. ");
 
-                doc.addRow(1, { acronym: 'New entry' }, function(err) {
+                doc.addRow(1, { acronym: incoming_message }, function(err) {
                     if(err) {
                         console.log(err);
                     }
