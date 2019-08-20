@@ -68,7 +68,7 @@ module.exports = function(graph_api){
             else {
                 this._sendMessage(senderID, "Sorry I did not find that one , But dont worry I have sent it to the admin for review. It will be updated soon. ");
 
-                this._sendMessage(AdminworkplaceId, "Hey Admin!! The Acronym bot just got a question called : " + incoming_message + " which it does not know the answer for. Can you update the sheet with the meaning ? Quick link : https://docs.google.com/spreadsheets/d/1D7CvKvJ0o6Wy8ZxZx3Oj4RfwqUaVBs-ueWC6xWZ9-_8/edit#gid=0 .. Dont worry if you want" +
+                this._sendMessage(AdminworkplaceId, "Hey Admin!! The Acronym bot just got a question called : " + incoming_message + "  \n which it does not know the answer for. Can you update the sheet with the meaning ?  \n Quick link : https://docs.google.com/spreadsheets/d/1D7CvKvJ0o6Wy8ZxZx3Oj4RfwqUaVBs-ueWC6xWZ9-_8/edit#gid=0 .. \n Dont worry if you want" +
                     "to do it later , i have saved the query here : https://docs.google.com/spreadsheets/d/1tHDGG321U79-kzzE1OMQ17fi-OXcbJdnxv5FzVEztfU/edit#gid=0");
 
 
