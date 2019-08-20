@@ -39,8 +39,6 @@ module.exports = function(graph_api){
                 console.log("console message")
                 rows.forEach(function (rowValue) {
                     eachRow.set(rowValue.acronym, rowValue.index)
-
-
                     rowsval=rows;
                 })
             });
@@ -69,12 +67,15 @@ module.exports = function(graph_api){
             else {
                 this._sendMessage(senderID, "Sorry I did not find that one , But dont worry I have sent it to the admin for review. It will be updated soon. ");
 
-                newquerydoc.addRow(1, { acronym: 'new Entry' }, function(err) {
-                    if(err) {
-                        console.log(err);
-                    }
-                });
 
+                newquerydoc.useServiceAccountAuth(creds, function (err) {
+                    newquerydoc.addRow(1, { acronym: 'New Entry' }, function(err) {
+                        if(err) {
+                            console.log(err);
+                        }
+                    });
+
+                });
 
             }
         }
