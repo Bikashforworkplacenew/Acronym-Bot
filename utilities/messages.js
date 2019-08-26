@@ -48,11 +48,18 @@ module.exports = function(graph_api){
         var incoming_message = message.message.text
         console.log(incoming_message)
 
-        if(incoming_message.includes("Hey")){
+        if(incoming_message.includes("Hey") || incoming_message.includes("Hello") || incoming_message.includes("Hi")){
             this._sendMessage(senderID, "Hello !! I am the Acronym Bot. Please type any term that you dont know off and I can help you get more information on it :) " );
         }
 
         else if(incoming_message.length > 0) {
+
+            if(incoming_message.length < 3){
+
+                this._sendMessage(senderID, "Sorry your message is too short for me to understand , please ensure input message spuld at least be 3 or more letters" );
+            }
+
+            else
 
             if (eachRow.has(incoming_message)) {
                 console.log('item present in index ' + eachRow.get(incoming_message))
